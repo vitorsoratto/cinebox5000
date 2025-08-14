@@ -6,7 +6,8 @@ part 'splash_view_model.g.dart';
 class SplashViewModel {
   final CheckUserLoggedCommand _checkUserLoggedCommand;
 
-  SplashViewModel(this._checkUserLoggedCommand);
+  SplashViewModel({required CheckUserLoggedCommand checkUserLoggedCommand})
+    : _checkUserLoggedCommand = checkUserLoggedCommand;
 
   void checkLoginAndRedirect() => _checkUserLoggedCommand.execute();
 }
@@ -17,5 +18,7 @@ SplashViewModel splashViewModel(Ref ref) {
     checkUserLoggedCommandProvider.notifier,
   );
 
-  return SplashViewModel(checkUserLoggedCommand);
+  return SplashViewModel(
+    checkUserLoggedCommand: checkUserLoggedCommand,
+  );
 }
