@@ -8,6 +8,7 @@ class CineboxMainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Cinebox',
       theme: AppTheme.theme,
       routes: {
